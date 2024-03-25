@@ -1,0 +1,37 @@
+23rcvictor
+c48UxcEf6JCvuigV
+
+
+mongodb+srv://23rcvictor:<password>@bibilhotecadb.lobhoq6.mongodb.net/?retryWrites=true&w=majority&appName=BibilhotecaDB
+
+
+npm i express
+
+node src/index.js
+
+==========================================
+
+end poit: http://localhost:30001
+
+API POST: 
+
+{
+	      "title": "Harry Potter",
+        "autor": "J.K. Rowling",
+        "tipe" : "Fantasia",
+        "url_image": "data:image/png;base64,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",
+        "quantidade": "8"
+	
+}
+
+
+===========================================
+
+API GET:
+
+END POIT: http://localhost:30001/Biblioteca
+
+app.get('/Biblioteca', async (req, res) => {
+    const livros  = await LivroModel.find();
+    res.send(livros);
+  })

@@ -14,6 +14,7 @@ const LivroModel = mongoose.model('Livro', {
     quantidade: Number
   });
 
+
   app.get('/Teste', (req, res) => {
     res.send('Onlineeee')
   })
@@ -24,6 +25,25 @@ app.get('/Biblioteca', async (req, res) => {
     res.send(livros);
   })
 
+  app.delete("/:id", async (req, res) => {
+    const livros = await LivroModel.findByIdAndDelete (req.params.id)
+     res.send(livros);
+
+  } )
+
+
+  app.put("/:id", async (req, res) => {
+    const livros = await LivroModel.findByIdAndUpdate (req.params.id, {
+      title: req.body.title,
+      autor: req.body.autor,
+      type: req.body.type,
+      url_image: req.body.url_image,
+      quantidade: req.body.quantidade
+    })
+
+     res.send(livros);
+
+  } )
 
 app.post('/', async (req, res) => {
     const novoLivro = new LivroModel({
@@ -38,7 +58,7 @@ app.post('/', async (req, res) => {
       res.send(novoLivro);
   
   })
-  
+
 
 
 app.listen(port, () => {
